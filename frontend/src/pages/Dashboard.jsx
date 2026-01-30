@@ -9,6 +9,7 @@ import Card from "../components/Card";
 import Button from "../components/Button";
 import { videoAPI } from "../services/api";
 import styles from "../styles/Dashboard.module.css";
+import uploadButtonStyles from "../styles/UploadButton.module.css";
 import { useAuth } from "../context/AuthContext";
 
 const Dashboard = () => {
@@ -61,16 +62,17 @@ const Dashboard = () => {
                 Welcome back, {user?.firstName}! Here's your video overview.
               </p>
             </div>
-            <Button
+            <button
               type="button"
               onClick={() => {
                 console.log("📹 Upload button clicked, navigating to /upload");
                 navigate("/upload");
               }}
-              className={styles.uploadBtn}
+              className={uploadButtonStyles.uploadButton}
+              style={{ width: "200px" }}
             >
-              ⬆️ Upload Video
-            </Button>
+              Upload Video
+            </button>
           </div>
 
           {error && <div className={styles.errorAlert}>{error}</div>}
@@ -85,7 +87,7 @@ const Dashboard = () => {
                   title="TOTAL VIDEOS"
                   value={stats.totalVideos}
                   icon="📹"
-                  className={styles.statCard}
+                  className={`${styles.statCard} ${styles.info}`}
                 />
                 <Card
                   title="SAFE VIDEOS"

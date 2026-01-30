@@ -1,0 +1,55 @@
+/* From Uiverse.io by vinodjangid07 */
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 120px;
+  height: 40px;
+  position: relative;
+  border: 1px solid #81aca0;
+  background-color: #209978;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+  border-radius: 0;
+}
+
+.button__text {
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.button__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #17795e;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s;
+}
+
+.button__icon svg {
+  width: 18px;
+}
+
+.shareButton:hover .button__icon {
+  width: 100%;
+}
+
+.shareButton:active {
+  transform: scale(0.95);
+}
+
+.shareButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

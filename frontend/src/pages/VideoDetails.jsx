@@ -11,6 +11,9 @@ import Navbar from "../components/Navbar";
 import VideoPlayer from "../components/VideoPlayer";
 import Button from "../components/Button";
 import styles from "../styles/VideoDetails.module.css";
+import deleteButtonStyles from "../styles/DeleteButton.module.css";
+import shareButtonStyles from "../styles/ShareButton.module.css";
+import downloadButtonStyles from "../styles/DownloadButton.module.css";
 
 const VideoDetails = () => {
   const { videoId } = useParams();
@@ -285,19 +288,173 @@ const VideoDetails = () => {
 
                 {/* Action Buttons */}
                 <div className={styles.actions}>
-                  <Button onClick={handleShare} className={styles.btn}>
-                    📤 Share
-                  </Button>
-                  <Button onClick={handleDownload} className={styles.btn}>
-                    ⬇️ Download
-                  </Button>
+                  <button
+                    type="button"
+                    className={shareButtonStyles.shareButton}
+                    onClick={handleShare}
+                  >
+                    <span className={shareButtonStyles.button__text}>
+                      Share
+                    </span>
+                    <span className={shareButtonStyles.button__icon}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 134 134"
+                      >
+                        <circle
+                          strokeWidth="13"
+                          stroke="white"
+                          r="20.5"
+                          cy="27"
+                          cx="107"
+                        ></circle>
+                        <circle
+                          strokeWidth="13"
+                          stroke="white"
+                          r="20.5"
+                          cy="107"
+                          cx="107"
+                        ></circle>
+                        <circle
+                          strokeWidth="13"
+                          stroke="white"
+                          r="20.5"
+                          cy="67"
+                          cx="27"
+                        ></circle>
+                        <line
+                          strokeWidth="13"
+                          stroke="white"
+                          y2="36.1862"
+                          x2="88.0931"
+                          y1="56.1862"
+                          x1="48.0931"
+                        ></line>
+                        <line
+                          strokeWidth="13"
+                          stroke="white"
+                          y2="97.6221"
+                          x2="89.0893"
+                          y1="78.1486"
+                          x1="48.8304"
+                        ></line>
+                      </svg>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    className={downloadButtonStyles.button}
+                    onClick={handleDownload}
+                  >
+                    <span className={downloadButtonStyles.button__text}>
+                      Download
+                    </span>
+                    <span className={downloadButtonStyles.button__icon}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 35 35"
+                        id="bdd05811-e15d-428c-bb53-8661459f9307"
+                        data-name="Layer 2"
+                      >
+                        <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
+                        <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
+                        <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
+                      </svg>
+                    </span>
+                  </button>
                   {canDelete && (
-                    <Button
+                    <button
+                      className={deleteButtonStyles.button}
                       onClick={handleDelete}
-                      className={`${styles.btn} ${styles.danger}`}
+                      type="button"
+                      style={{ width: "150px", height: "40px" }}
                     >
-                      🗑️ Delete
-                    </Button>
+                      <span className={deleteButtonStyles.button__text}>
+                        Delete
+                      </span>
+                      <span className={deleteButtonStyles.button__icon}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="512"
+                          viewBox="0 0 512 512"
+                          height="512"
+                        >
+                          <title></title>
+                          <path
+                            style={{
+                              fill: "none",
+                              stroke: "#323232",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: "32px",
+                            }}
+                            d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320"
+                          ></path>
+                          <line
+                            y2="112"
+                            y1="112"
+                            x2="432"
+                            x1="80"
+                            style={{
+                              stroke: "#323232",
+                              strokeLinecap: "round",
+                              strokeMiterlimit: "10",
+                              strokeWidth: "32px",
+                            }}
+                          ></line>
+                          <path
+                            style={{
+                              fill: "none",
+                              stroke: "#323232",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: "32px",
+                            }}
+                            d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40"
+                          ></path>
+                          <line
+                            y2="400"
+                            y1="176"
+                            x2="256"
+                            x1="256"
+                            style={{
+                              fill: "none",
+                              stroke: "#323232",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: "32px",
+                            }}
+                          ></line>
+                          <line
+                            y2="400"
+                            y1="176"
+                            x2="192"
+                            x1="184"
+                            style={{
+                              fill: "none",
+                              stroke: "#323232",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: "32px",
+                            }}
+                          ></line>
+                          <line
+                            y2="400"
+                            y1="176"
+                            x2="320"
+                            x1="328"
+                            style={{
+                              fill: "none",
+                              stroke: "#323232",
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: "32px",
+                            }}
+                          ></line>
+                        </svg>
+                      </span>
+                    </button>
                   )}
                 </div>
               </div>

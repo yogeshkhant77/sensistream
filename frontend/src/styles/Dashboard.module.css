@@ -53,11 +53,18 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+.statCard.info {
+  background-color: #f0f9ff;
+  border-left: 4px solid #4a90e2;
+}
+
 .statCard.success {
+  background-color: #f0fdf4;
   border-left: 4px solid #28a745;
 }
 
 .statCard.danger {
+  background-color: #fef2f2;
   border-left: 4px solid #e63946;
 }
 

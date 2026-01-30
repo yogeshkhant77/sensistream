@@ -15,6 +15,7 @@ import Button from "../components/Button";
 import ProcessingProgress from "../components/ProcessingProgress";
 import { subscribeToProcessingProgress } from "../socket/socket";
 import styles from "../styles/Upload.module.css";
+import uploadButtonStyles from "../styles/UploadButton.module.css";
 
 const Upload = () => {
   const { user } = useAuth();
@@ -336,14 +337,14 @@ const Upload = () => {
             </div>
 
             {/* Submit Button */}
-            <Button
+            <button
               type="submit"
-              fullWidth
+              className={uploadButtonStyles.uploadButton}
               disabled={isUploading || isProcessing || !file || !title.trim()}
               style={{ marginTop: "10px" }}
             >
-              {isUploading ? "📤 Uploading..." : "🚀 Upload Video"}
-            </Button>
+              {isUploading ? "Uploading..." : "Upload Video"}
+            </button>
           </form>
         </div>
       </main>
