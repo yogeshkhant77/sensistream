@@ -1,0 +1,356 @@
+/**
+ * VideoPlayer Styles
+ * Advanced HTML5 player with controls
+ */
+
+.playerContainer {
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.statusBanner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 16px;
+  text-align: left;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.processingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.processingPercent {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.processingMessage {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+.warningBanner {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.errorBanner {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background: #000;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.loadingIndicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px 16px 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.controls.visible {
+  opacity: 1;
+}
+
+.videoWrapper:hover .controls,
+.videoWrapper:focus-within .controls {
+  opacity: 1;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: height 0.2s ease;
+}
+
+.progressContainer:hover {
+  height: 8px;
+}
+
+.progressBarBackground {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: #ff4444;
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.progressBarDot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #ff4444;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 68, 68, 0.8);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  left: 0%;
+}
+
+.progressContainer:hover .progressBarDot {
+  opacity: 1;
+}
+
+.progressTooltip {
+  position: absolute;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #ff4444;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  animation: tooltipFadeIn 0.2s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.bottomControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.leftControls,
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.controlBtn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controlBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.controlBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.timeDisplay {
+  font-size: 12px;
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volumeIcon {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.volumeSlider {
+  width: 60px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #4a90e2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volumeSlider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #4a90e2;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.speedSelect,
+.qualitySelect {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.speedSelect:hover,
+.qualitySelect:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.speedSelect option,
+.qualitySelect option {
+  background: #333;
+  color: #fff;
+}
+
+.videoInfo {
+  padding: 16px;
+  background: #f5f7fa;
+  border-radius: 0 0 8px 8px;
+}
+
+.videoInfo h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .controls {
+    padding: 16px 12px 12px;
+  }
+
+  .bottomControls {
+    gap: 8px;
+  }
+
+  .rightControls {
+    gap: 6px;
+  }
+
+  .volumeSlider {
+    width: 40px;
+  }
+
+  .speedSelect,
+  .qualitySelect {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+
+  .timeDisplay {
+    font-size: 11px;
+  }
+}
