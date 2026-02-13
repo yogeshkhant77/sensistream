@@ -2,6 +2,14 @@
 
 A production-ready full-stack application for uploading, processing, and streaming videos with real-time sensitivity analysis and role-based access control.
 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/b082217b-9e46-45fb-8782-a9eba562a1f1" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/28c18524-246d-40ff-a452-025b163f3096" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/8635cddf-1239-482c-bd5f-646fe66954fe" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/73b7d480-7322-41ae-9bed-d1b710c11595" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4e30fd2b-f6a7-4457-9d23-b8b9ab004863" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ebcdd46e-eea8-4789-8645-488bbebf8387" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/0656cc35-1ad6-4a14-a2fb-04b053bfc648" />
+
 ## 📋 Table of Contents
 
 - [Features](#features)
